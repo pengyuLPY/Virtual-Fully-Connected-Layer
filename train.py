@@ -10,7 +10,7 @@ import utils.data_transformer as transforms
 import utils.target_transformer as target_transformer
 import utils.util as Logger 
 from utils.lr_policy import *
-from utils.batch_sampler import BalancedBatchSampler_LPY3
+from utils.batch_sampler import BalancedBatchSampler
 
 
 from config import *
@@ -95,11 +95,11 @@ if __name__ == '__main__':
 
 
 
-    train_batch_sampler = BalancedBatchSampler_LPY3(dataset=train_dataset_MS, n_samples=n_samples, n_min_samples=n_min_samples, batch_size=train_batchSize_MS, shuffle=True)
+    train_batch_sampler = BalancedBatchSampler(dataset=train_dataset_MS, n_samples=n_samples, n_min_samples=n_min_samples, batch_size=train_batchSize_MS, shuffle=True)
     train_loader_MS = torch.utils.data.DataLoader(
         train_dataset_MS,  num_workers = workers, pin_memory=True, batch_sampler=train_batch_sampler
     )
-    test_batch_sampler = BalancedBatchSampler_LPY3(dataset=test_dataset_MS, n_samples=n_samples, n_min_samples=n_min_samples, batch_size=test_batchSize_MS, shuffle=True)
+    test_batch_sampler = BalancedBatchSampler(dataset=test_dataset_MS, n_samples=n_samples, n_min_samples=n_min_samples, batch_size=test_batchSize_MS, shuffle=True)
     test_loader_MS = torch.utils.data.DataLoader(
         test_dataset_MS,  num_workers = workers, pin_memory=True, batch_sampler=test_batch_sampler
     )
