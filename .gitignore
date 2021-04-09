@@ -3,3 +3,5 @@
 *.pytorch
 *.pyc
 *.log
+*.DS_Store
+*.idea/
