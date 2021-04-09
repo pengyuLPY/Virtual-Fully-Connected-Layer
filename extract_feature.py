@@ -1,16 +1,13 @@
 import sys
 import os
-from base_code.distributed import *
-#from base_code.train_test import *
+#from utils.train_test import *
 from train_test import *
 import torch.backends.cudnn as cudnn 
-from base_code.imageLoader import ImageLabelFolder
-import base_code.data_transformer as transforms
-import base_code.target_transformer as target_transformer
-import base_code.util as Logger 
-import layers.basic_layer
+from utils.imageLoader import ImageLabelFolder
+import utils.data_transformer as transforms
+import utils.target_transformer as target_transformer
+import utils.util as Logger 
 import numpy as np
-import base_code.parallel.data_parallel as data_parallel
 
 def extract_feature_main(testRoot, testProto, test_batchSize, pretrained_file, model, flip_prob=-1):
 #################################  DATA LOAD  ##################
@@ -78,26 +75,26 @@ if __name__ == '__main__':
         print ('Model Initing complete')
 
         testRoot_list = [
-                '/home/pengyu.lpy/dataset/lfw/lfw_manual_remove_error_detection_align/',
-                '/home/pengyu.lpy/dataset/IJB/IJB-A/align_image_180_220_errorDetect200/',
-                '/mnt/pengyu.lpy/dataset/IJB/IJB_release_something/IJBB/align_180_220/',
-                '/mnt/pengyu.lpy/dataset/IJB/IJB_release_something/IJBC/align_180_220/',
-                '/home/pengyu.lpy/dataset/',
+                #'/home/pengyu.lpy/dataset/lfw/lfw_manual_remove_error_detection_align/',
+                #'/home/pengyu.lpy/dataset/IJB/IJB-A/align_image_180_220_errorDetect200/',
+                #'/home/pengyu.lpy/dataset/IJB/IJB_release_something/IJBB/align_180_220/',
+                #'/home/pengyu.lpy/dataset/IJB/IJB_release_something/IJBC/align_180_220/',
+                #'/home/pengyu.lpy/dataset/',
                 '/home/pengyu.lpy/dataset/'
                    ]
         testProto_list = [
-                '/home/pengyu.lpy/dataset/lfw/lfw_manual_remove_error_detection_align/lfw_align_list.txt',
-                 '/home/pengyu.lpy/dataset/IJB/IJB-A/labels/idxs/img_list.txt',
-                '/mnt/pengyu.lpy/code/tools/face_test/ijbb_ijbc/IJBB/meta/ijbb_name_fakeLabel.txt',
-                '/mnt/pengyu.lpy/code/tools/face_test/ijbb_ijbc/IJBC/meta/ijbc_name_fakeLabel.txt',
-                '/home/pengyu.lpy/dataset/MegaFace/meta_official/set1/target.txt',
+                #'/home/pengyu.lpy/dataset/lfw/lfw_manual_remove_error_detection_align/lfw_align_list.txt',
+                # '/home/pengyu.lpy/dataset/IJB/IJB-A/labels/idxs/img_list.txt',
+                #'/home/pengyu.lpy/code/tools/face_test/ijbb_ijbc/IJBB/meta/ijbb_name_fakeLabel.txt',
+                #'/home/pengyu.lpy/code/tools/face_test/ijbb_ijbc/IJBC/meta/ijbc_name_fakeLabel.txt',
+                #'/home/pengyu.lpy/dataset/MegaFace/meta_official/set1/target.txt',
                 '/home/pengyu.lpy/dataset/MegaFace/meta_official/set1/disturb.txt'
                    ]
         save_list = [
-                './bin/lfw_resnet50net_arcFace_epoch_16.bin',
-                './bin/ijba_resnet50net_arcFace_epoch_16.bin',
-                './bin/ijbb_resnet50net_arcFace_epoch_16.bin',
-                './bin/ijbc_resnet50net_arcFace_epoch_16.bin',
+                #'./bin/lfw_resnet50net_arcFace_epoch_16.bin',
+                #'./bin/ijba_resnet50net_arcFace_epoch_16.bin',
+                #'./bin/ijbb_resnet50net_arcFace_epoch_16.bin',
+                #'./bin/ijbc_resnet50net_arcFace_epoch_16.bin',
                './bin/megaFaceSet1_resnet50net_arcFace_epoch_16_1024/target.bin',
                './bin/megaFaceSet1_resnet50net_arcFace_epoch_16_1024/disturb.bin',
         ]

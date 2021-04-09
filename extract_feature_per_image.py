@@ -1,13 +1,11 @@
 import sys
 import random
 import os
-from base_code.distributed import *
 from train_test import *
-from base_code.imageLoader import ImageLabelFolder
-import base_code.data_transformer as transforms
-import base_code.target_transformer as target_transformer
-import base_code.util as Logger 
-import layers.basic_layer
+from utils.imageLoader import ImageLabelFolder
+import utils.data_transformer as transforms
+import utils.target_transformer as target_transformer
+import utils.util as Logger 
 import numpy as np
 import torch.backends.cudnn as cudnn
 

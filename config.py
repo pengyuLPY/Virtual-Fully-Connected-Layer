@@ -53,20 +53,20 @@ test_batchSize_MS = 200
 
 
 
-trainProto = testProto
-trainProto_MS = testProto
-testProto_MS = testProto
-testRoot_MS = testRoot
-trainRoot_MS = testRoot
-test_iter = 10
-train_iter_per_epoch = 100
-test_init = True
-display = 1
+#trainProto = testProto
+#trainProto_MS = testProto
+#testProto_MS = testProto
+#testRoot_MS = testRoot
+#trainRoot_MS = testRoot
+#test_iter = 10
+#train_iter_per_epoch = 100
+#test_init = True
+#display = 1
 
 
 class lr_class:
     def __init__(self):
-        self.base_lr = 0.001
+        self.base_lr = 0.01
         self.gamma = 0.1
         self.lr_policy = "multistep"
         self.steps = [12,14,15] #[4800,5400,5800]

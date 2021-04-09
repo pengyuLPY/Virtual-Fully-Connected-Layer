@@ -21,7 +21,7 @@ def train(train_loader, train_loader_MS, model, criterion, optimizer, lr_obj, ep
         #if train_loader_iter.batches_outstanding == 0:
         if i >= len(train_loader):
             train_loader_iter = train_loader.__iter__()
-            i = -1
+            i = 0
         #if train_loader_MS_iter.batches_outstanding == 0:
         if i_ms >= len(train_loader_MS_iter):
             break
@@ -97,7 +97,6 @@ def test(test_loader, test_loader_MS, model, criterion, epoch, test_iter = 0, gp
     print('Testing length is {} and {}'.format(len(test_loader),len(test_loader_MS)))
     test_loader_iter = test_loader.__iter__()
     test_loader_MS_iter = test_loader_MS.__iter__()
-    print('A')
     with torch.no_grad():
         while(True):
             i += 1
@@ -110,6 +109,7 @@ def test(test_loader, test_loader_MS, model, criterion, epoch, test_iter = 0, gp
             #if test_loader_iter.batches_outstanding == 0:
             if i >= len(test_loader):
                 test_loader_iter = test_loader.__iter__()
+                i = 0
               
             data,target = test_loader_iter.__next__()
             data_MS,target_MS = test_loader_MS_iter.__next__()
