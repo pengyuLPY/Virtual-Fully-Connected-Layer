@@ -45,11 +45,12 @@ significant margin
 
 If you find the code useful, please consider citing our paper:
 ```
-@InProceedings{Li2021VirtualFC,
-author = {Li, Pengyu and Wang, Biao and Zhang, Lei},
-title = {Virtual Fully-Connected Layer: Training a Large-Scale Face Recognition Dataset with Limited Computational Resources},
-booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-year = {2021}
+@InProceedings{Li_2021_CVPR,
+    author    = {Li, Pengyu and Wang, Biao and Zhang, Lei},
+    title     = {Virtual Fully-Connected Layer: Training a Large-Scale Face Recognition Dataset With Limited Computational Resources},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {13315-13324}
 }
 ```
-
